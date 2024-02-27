@@ -14,6 +14,10 @@ class ProductListView(LoginRequiredMixin,ListView):
     model = Product
     paginate_by = 3
 
+class ProductDetailView(DetailView):
+    model = Product
+    temlpate_name = "crud/product_detail.html"
+
 class ProductCreateView(LoginRequiredMixin,CreateView):
      model = Product
      fields = '__all__'
