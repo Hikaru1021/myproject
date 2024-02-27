@@ -1,8 +1,9 @@
 {% extends "base.html" %}
- 
-{% block title %}新規作成{% endblock %}
+{% load bootstrap %} 
+
+{% block title %}新規生徒登録{% endblock %}
 {% block content %}
-<h1>新規作成</h1>
+<h1>新規生徒登録</h1>
 
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}

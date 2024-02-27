@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load bootstrap %}
+ 
+ {% block title %}生徒詳細{% endblock %}
+ {% block content %}
+ <h1>生徒詳細</h1>
+ <table class="table table-striped table-hover table-bordered">
+     <thead>
+         <tr>
+             <th>生徒名</th>
+             <th>学年</th>
+             <th>受講プラン</th>
+             <th>生徒写真</th>
+             <th>生徒情報の詳細</th>
+         </tr>
+     </thead>
+    <tbody>
+     <tr>
+         <td>{{ product.name }}</td>
+         <td>{{ product.price }} </td>
+         <td>{{ product.category }}</td>
+         <td><img src="{{ product.img.url }}" style="width:100px height:auto;"></td>
+         <td>{{product.explanation}}</td>
+     </tr>
+    </tbody>
+ </table>
+ <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <br>
+    <a href="{% url 'list' %}">戻る</a>
+</form>
+ {% endblock %}
